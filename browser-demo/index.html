@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script src="react-15.1.0.js"></script>
+<script src="react-dom-15.1.0.js"></script>
+<script src="mobx.umd.js"></script>
+<script src="mobx-react.js"></script>
+<script src="babel.min.js"></script>
+<div id="app"></div>
+<script type="text/babel">
+    const {observable,computed}=mobx;
+    const {observer}=mobxReact;
+    const {Component} = React;
+    const {render} = ReactDOM;
+    // observalbe:可观测的.让person1成为可观测的
+    const person1 = observable({
+        name: "jeff",
+        age: 30
+    });
+    // observer:观察者.App类是一个“观察者”，观察store的变化，只要一有变化，立刻重新渲染.
+    const App = observer(
+                    ({person}) => <h1>{person.name}</h1>
+    );
+    render(<App person = {person1} />, document.getElementById('app'));
+//    person1.name='cena';
+</script>
+</body>
+</html>
