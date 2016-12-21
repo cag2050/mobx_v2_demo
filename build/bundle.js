@@ -80,43 +80,43 @@
 	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
 	var App = (0, _mobxReact.observer)(_class = function (_React$Component) {
-	  _inherits(App, _React$Component);
+	    _inherits(App, _React$Component);
 
-	  function App() {
-	    _classCallCheck(this, App);
+	    function App() {
+	        _classCallCheck(this, App);
 
-	    return _possibleConstructorReturn(this, (App.__proto__ || Object.getPrototypeOf(App)).apply(this, arguments));
-	  }
-
-	  _createClass(App, [{
-	    key: 'render',
-	    value: function render() {
-	      var _this2 = this;
-
-	      return _react2.default.createElement(
-	        'div',
-	        { className: 'index' },
-	        _react2.default.createElement(
-	          'p',
-	          null,
-	          this.props.store.decorated
-	        ),
-	        _react2.default.createElement('input', {
-	          defaultValue: this.props.store.name,
-	          onChange: function onChange(event) {
-	            return _this2.props.store.name = event.currentTarget.value;
-	          }
-	        })
-	      );
+	        return _possibleConstructorReturn(this, (App.__proto__ || Object.getPrototypeOf(App)).apply(this, arguments));
 	    }
-	  }]);
 
-	  return App;
+	    _createClass(App, [{
+	        key: 'render',
+	        value: function render() {
+	            var _this2 = this;
+
+	            return _react2.default.createElement(
+	                'div',
+	                null,
+	                _react2.default.createElement(
+	                    'p',
+	                    null,
+	                    this.props.store.decorated
+	                ),
+	                _react2.default.createElement('input', {
+	                    defaultValue: this.props.store.name,
+	                    onChange: function onChange(event) {
+	                        return _this2.props.store.name = event.currentTarget.value;
+	                    }
+	                })
+	            );
+	        }
+	    }]);
+
+	    return App;
 	}(_react2.default.Component)) || _class;
 
-	var store = new _store2.default();
+	var store1 = new _store2.default();
 
-	_reactDom2.default.render(_react2.default.createElement(App, { store: store }), document.body.appendChild(document.createElement('div')));
+	_reactDom2.default.render(_react2.default.createElement(App, { store: store1 }), document.getElementById('div1'));
 
 /***/ },
 /* 2 */
@@ -25369,7 +25369,7 @@
 	'use strict';
 
 	Object.defineProperty(exports, "__esModule", {
-	  value: true
+	    value: true
 	});
 
 	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
@@ -25379,70 +25379,70 @@
 	var _mobx = __webpack_require__(180);
 
 	function _initDefineProp(target, property, descriptor, context) {
-	  if (!descriptor) return;
-	  Object.defineProperty(target, property, {
-	    enumerable: descriptor.enumerable,
-	    configurable: descriptor.configurable,
-	    writable: descriptor.writable,
-	    value: descriptor.initializer ? descriptor.initializer.call(context) : void 0
-	  });
+	    if (!descriptor) return;
+	    Object.defineProperty(target, property, {
+	        enumerable: descriptor.enumerable,
+	        configurable: descriptor.configurable,
+	        writable: descriptor.writable,
+	        value: descriptor.initializer ? descriptor.initializer.call(context) : void 0
+	    });
 	}
 
 	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
 	function _applyDecoratedDescriptor(target, property, decorators, descriptor, context) {
-	  var desc = {};
-	  Object['ke' + 'ys'](descriptor).forEach(function (key) {
-	    desc[key] = descriptor[key];
-	  });
-	  desc.enumerable = !!desc.enumerable;
-	  desc.configurable = !!desc.configurable;
+	    var desc = {};
+	    Object['ke' + 'ys'](descriptor).forEach(function (key) {
+	        desc[key] = descriptor[key];
+	    });
+	    desc.enumerable = !!desc.enumerable;
+	    desc.configurable = !!desc.configurable;
 
-	  if ('value' in desc || desc.initializer) {
-	    desc.writable = true;
-	  }
+	    if ('value' in desc || desc.initializer) {
+	        desc.writable = true;
+	    }
 
-	  desc = decorators.slice().reverse().reduce(function (desc, decorator) {
-	    return decorator(target, property, desc) || desc;
-	  }, desc);
+	    desc = decorators.slice().reverse().reduce(function (desc, decorator) {
+	        return decorator(target, property, desc) || desc;
+	    }, desc);
 
-	  if (context && desc.initializer !== void 0) {
-	    desc.value = desc.initializer ? desc.initializer.call(context) : void 0;
-	    desc.initializer = undefined;
-	  }
+	    if (context && desc.initializer !== void 0) {
+	        desc.value = desc.initializer ? desc.initializer.call(context) : void 0;
+	        desc.initializer = undefined;
+	    }
 
-	  if (desc.initializer === void 0) {
-	    Object['define' + 'Property'](target, property, desc);
-	    desc = null;
-	  }
+	    if (desc.initializer === void 0) {
+	        Object['define' + 'Property'](target, property, desc);
+	        desc = null;
+	    }
 
-	  return desc;
+	    return desc;
 	}
 
 	function _initializerWarningHelper(descriptor, context) {
-	  throw new Error('Decorating class property failed. Please ensure that transform-class-properties is enabled.');
+	    throw new Error('Decorating class property failed. Please ensure that transform-class-properties is enabled.');
 	}
 
 	var Store = (_class = function () {
-	  function Store() {
-	    _classCallCheck(this, Store);
+	    function Store() {
+	        _classCallCheck(this, Store);
 
-	    _initDefineProp(this, 'name', _descriptor, this);
-	  }
-
-	  _createClass(Store, [{
-	    key: 'decorated',
-	    get: function get() {
-	      return this.name + ' is awesome!';
+	        _initDefineProp(this, 'name', _descriptor, this);
 	    }
-	  }]);
 
-	  return Store;
+	    _createClass(Store, [{
+	        key: 'decorated',
+	        get: function get() {
+	            return this.name + ' is awesome!';
+	        }
+	    }]);
+
+	    return Store;
 	}(), (_descriptor = _applyDecoratedDescriptor(_class.prototype, 'name', [_mobx.observable], {
-	  enumerable: true,
-	  initializer: function initializer() {
-	    return 'Bartek';
-	  }
+	    enumerable: true,
+	    initializer: function initializer() {
+	        return 'Bartek';
+	    }
 	}), _applyDecoratedDescriptor(_class.prototype, 'decorated', [_mobx.computed], Object.getOwnPropertyDescriptor(_class.prototype, 'decorated'), _class.prototype)), _class);
 	exports.default = Store;
 
